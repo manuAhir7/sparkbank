@@ -16,8 +16,8 @@ class Navbar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: const Text("Manu"),
-            accountEmail: const Text("manuahirwar124@gmail.com"),
+            accountName: const Text("Manu ahirwar"),
+            accountEmail: const Text("dev:mraj940789@gmail.com"),
             currentAccountPicture: GestureDetector(
               onTap: () => showSecondImage(context),
               child: Hero(
