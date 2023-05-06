@@ -25,7 +25,7 @@ class Navbar extends StatelessWidget {
                 child: CircleAvatar(
                   child: ClipOval(
                     child: Image.asset(
-                      'images/avatar.jpg',
+                      'images/gojo-avatar.jpg',
                       fit: BoxFit.cover,
                       width: 90,
                       height: 90,
@@ -65,7 +65,7 @@ class Navbar extends StatelessWidget {
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
             onTap: () async {
               final result = await Share.shareWithResult(
-                  'check out my website https://example.com',
+                  'check out my website Sparkbank - Home page https://spark-9b553.web.app/',
                   subject: 'Flutter learning app');
               ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('share result=${result.status}')));
@@ -80,7 +80,7 @@ class Navbar extends StatelessWidget {
             title: const Text('Source code',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
             onTap: () {
-              final Uri url1 = Uri.parse('https://github.com/manuAhir7');
+              final Uri url1 = Uri.parse('https://github.com/manuAhir7/sparkbank');
               launchUrl(url1, mode: LaunchMode.platformDefault);
             },
           ),
@@ -94,7 +94,7 @@ class Navbar extends StatelessWidget {
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
             onTap: () {
               final Uri url1 = Uri.parse(
-                  'https://github.com/manuAhir7/mausam_weatherapp/issues/new');
+                  'https://github.com/manuAhir7/sparkbank/issues');
               launchUrl(url1, mode: LaunchMode.platformDefault);
             },
           ),
@@ -129,7 +129,7 @@ class Navbar extends StatelessWidget {
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
             onTap: () {
               final Uri url1 = Uri.parse(
-                  'https://github.com/manuAhir7/mausam_weatherapp#mausam');
+                  'https://github.com/manuAhir7/sparkbank#sparkbank');
               launchUrl(url1, mode: LaunchMode.platformDefault);
             },
           ),
@@ -187,7 +187,7 @@ void showSecondImage(BuildContext context) {
             body: Center(
               child: Hero(
                 tag: 'my-hero-tag',
-                child: Image.asset('images/avatar.jpg'),
+                child: Image.asset('images/gojo-avatar.jpg'),
               ),
             ),
           )));
