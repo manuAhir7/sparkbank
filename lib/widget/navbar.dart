@@ -17,7 +17,7 @@ class Navbar extends StatelessWidget {
         children: [
           UserAccountsDrawerHeader(
             accountName: const Text("Manu ahirwar"),
-            accountEmail: const Text("dev:mraj940789@gmail.com"),
+            accountEmail: const Text("mraj940789@gmail.com"),
             currentAccountPicture: GestureDetector(
               onTap: () => showSecondImage(context),
               child: Hero(
