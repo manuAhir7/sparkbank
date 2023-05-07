@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:sparkbank/model/usermodel.dart';
 import 'package:sparkbank/database/bankdb.dart';
@@ -8,10 +10,6 @@ class Userbar extends StatelessWidget {
 
   const Userbar({Key? key, required this.index, required this.user})
       : super(key: key);
-
-  Future<void> deleteuser(int index) async{
-    await Sparkbank.instance.deleteInfo(index);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +42,7 @@ class Userbar extends StatelessWidget {
             children: [
               Expanded(
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(
@@ -62,7 +61,6 @@ class Userbar extends StatelessWidget {
                           horizontal: 5, vertical: 14),
                       child: Column(
                         children: [
-                          // Text('Item $index'),
                           SizedBox(
                             width: 140,
                             height: 20,
@@ -128,9 +126,16 @@ class Userbar extends StatelessWidget {
                        width: 38,
                        child: Column(
                          children: [
-                           IconButton(onPressed: () async{
-                             //await deleteuser(index);
-                           }, icon: const Icon(Icons.delete_outline), iconSize: 19)
+                           IconButton(
+                           onPressed: () async {
+                     await Sparkbank.instance.deleteEntry(user.id);
+                     Navigator.popAndPushNamed(context, '/user');
+                     ScaffoldMessenger.of(context).showSnackBar(
+                     SnackBar(
+                     content: Text("${user.name} deleted."),
+                     ),
+                     );
+                     },icon: const Icon(Icons.delete_outline), iconSize: 19)
                          ],
                        ),
                      ),

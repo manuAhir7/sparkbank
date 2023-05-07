@@ -96,8 +96,8 @@ class _UsergridState extends State<Usergrid> {
           width: 111,
           height: 111,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 9),
               const CircleAvatar(
                 radius: 33,
                 backgroundImage: AssetImage('images/avatar.jpg'),

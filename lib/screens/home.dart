@@ -12,23 +12,25 @@ class Home extends StatelessWidget {
       drawer: const Navbar(),
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.green),
-        title: Row(
-          children: [
-            const SizedBox(width: 35),
-            Image.asset(
-              'images/sparkbank.png',
-              fit: BoxFit.contain,
-              height: 32,
-            ),
-            Container(
-                padding: const EdgeInsets.all(8.0),
-                child: const Text(
-                  "Spark Bank",
-                  style: TextStyle(
-                    color: Colors.green,
-                  ),
-                ))
-          ],
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 65.0),
+          child: Row(
+            children: [
+              Image.asset(
+                'images/sparkbank.png',
+                fit: BoxFit.contain,
+                height: 32,
+              ),
+              Container(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Text(
+                    "Spark Bank",
+                    style: TextStyle(
+                      color: Colors.green,
+                    ),
+                  ))
+            ],
+          ),
         ),
         backgroundColor: Colors.white,
         shadowColor: Colors.greenAccent,

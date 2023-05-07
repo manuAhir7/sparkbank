@@ -55,20 +55,20 @@ class Sparkbank {
     return info.copy(id: id);
   }
 
-  Future<List<Info>> readAllInfo() async {
-    final db = await instance.database;
-    const orderBy = '${BankList.id} ASC';
-    final queryResult = await db!.query(BankList.tableName, orderBy: orderBy);
-    return queryResult.map((json) => Info.fromJson(json)).toList();
-  }
-
-  Future<void> deleteInfo(int id) async {
+  Future<void> deleteEntry(int? id) async {
     final db = await instance.database;
     await db!.delete(
       BankList.tableName,
       where: '${BankList.id} = ?',
       whereArgs: [id],
     );
+  }
+
+    Future<List<Info>> readAllInfo() async {
+    final db = await instance.database;
+    const orderBy = '${BankList.id} ASC';
+    final queryResult = await db!.query(BankList.tableName, orderBy: orderBy);
+    return queryResult.map((json) => Info.fromJson(json)).toList();
   }
 
   Future<List<String>> getAllNamesExcept(String name) async {
