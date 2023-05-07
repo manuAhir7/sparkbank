@@ -11,26 +11,25 @@ class Home extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       drawer: const Navbar(),
       appBar: AppBar(
+        leadingWidth: 70,
         iconTheme: const IconThemeData(color: Colors.green),
-        title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 65.0),
-          child: Row(
-            children: [
-              Image.asset(
-                'images/sparkbank.png',
-                fit: BoxFit.contain,
-                height: 32,
-              ),
-              Container(
-                  padding: const EdgeInsets.all(8.0),
-                  child: const Text(
-                    "Spark Bank",
-                    style: TextStyle(
-                      color: Colors.green,
-                    ),
-                  ))
-            ],
-          ),
+        title: Row(
+          children: [
+            const SizedBox(width: 25),
+            Image.asset(
+              'images/sparkbank.png',
+              fit: BoxFit.contain,
+              height: 32,
+            ),
+            Container(
+                padding: const EdgeInsets.all(8.0),
+                child: const Text(
+                  "Spark Bank",
+                  style: TextStyle(
+                    color: Colors.green,
+                  ),
+                ))
+          ],
         ),
         backgroundColor: Colors.white,
         shadowColor: Colors.greenAccent,
@@ -39,16 +38,14 @@ class Home extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
-              margin: const EdgeInsets.only(top: 70, bottom: 30),
-              child: Row(
-                children: [
-                  Image.asset("images/backGround.png",
-                      height: MediaQuery.of(context).size.height / 2.5,
-                      width: MediaQuery.of(context).size.width),
-                ],
-              ),
+            Row(
+              children: [
+                Image.asset("images/backGround.png",
+                    height: MediaQuery.of(context).size.height / 2.5,
+                    width: MediaQuery.of(context).size.width),
+              ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -89,10 +86,6 @@ class Home extends StatelessWidget {
             ),
             Column(
               children: [
-                SizedBox(
-                  width: double.maxFinite,
-                  height: MediaQuery.of(context).size.height/4.4,
-                ),
                 Text(
                   'version 1.0',
                   style: TextStyle(
